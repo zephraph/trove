@@ -5,6 +5,12 @@
   "workspaces": [
     "apps/*"
   ],
+  "catalogs": {
+    "default": {
+      "@tailwindcss/vite": "^4.1.16",
+      "tailwindcss": "^4.1.16"
+    }
+  },
   "scripts": {
     "dev": "bun --filter trove-extension run dev",
     "dev:firefox": "bun --filter trove-extension run dev:firefox",
