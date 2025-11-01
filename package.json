@@ -1,28 +1,23 @@
 {
-  "name": "trove-extension",
-  "description": "manifest.json description",
-  "private": true,
+  "name": "trove",
   "version": "0.0.0",
-  "type": "module",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "dev": "wxt",
-    "dev:firefox": "wxt -b firefox",
-    "build": "wxt build",
-    "build:firefox": "wxt build -b firefox",
-    "zip": "wxt zip",
-    "zip:firefox": "wxt zip -b firefox",
-    "compile": "tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "dev": "bun --filter trove-extension run dev",
+    "dev:firefox": "bun --filter trove-extension run dev:firefox",
+    "dev:site": "bun --filter trove-site run dev",
+    "build": "bun --filter trove-extension run build",
+    "build:firefox": "bun --filter trove-extension run build:firefox",
+    "build:site": "bun --filter trove-site run build",
+    "zip": "bun --filter trove-extension run zip",
+    "zip:firefox": "bun --filter trove-extension run zip:firefox",
+    "compile": "bun --filter trove-extension run compile",
+    "compile:site": "bun --filter trove-site run build",
+    "lint:site": "bun --filter trove-site run lint",
+    "preview:site": "bun --filter trove-site run preview"
   },
-  "dependencies": {
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
-  },
-  "devDependencies": {
-    "@types/react": "^19.1.12",
-    "@types/react-dom": "^19.1.9",
-    "@wxt-dev/module-react": "^1.1.3",
-    "typescript": "^5.9.2",
-    "wxt": "^0.20.6"
-  }
+  "devDependencies": {}
 }
