@@ -1,3 +1,5 @@
+experimental_monorepo_root = true
+
 [tools]
 bun = "1.3.1"
 
@@ -10,31 +12,3 @@ postinstall = "bun install"
 
 [env]
 _.path = "node_modules/.bin"
-
-[tasks.dev]
-run = "wxt"
-description = "Start development server"
-
-[tasks."dev:firefox"]
-run = "wxt -b firefox"
-description = "Start development server for Firefox"
-
-[tasks.build]
-run = "wxt build"
-description = "Build extension"
-
-[tasks."build:firefox"]
-run = "wxt build -b firefox"
-description = "Build extension for Firefox"
-
-[tasks.zip]
-run = "wxt zip"
-description = "Create zip package"
-
-[tasks."zip:firefox"]
-run = "wxt zip -b firefox"
-description = "Create zip package for Firefox"
-
-[tasks.compile]
-run = "tsc --noEmit"
-description = "Type check without emitting files"
