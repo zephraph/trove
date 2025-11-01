@@ -12,3 +12,6 @@ postinstall = "bun install"
 
 [env]
 _.path = "node_modules/.bin"
+
+[tasks.dev]
+depends = "//...:dev"
